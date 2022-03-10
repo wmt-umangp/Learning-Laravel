@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\democontroll;
+use App\Http\Controllers\crudcontroller;
+use App\Http\Controllers\membercontroller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,3 +31,25 @@ Route::view('/noaccess', 'noaccess');
 
 
 Route::get('/modeldata',[democontroll::class,'getdata']);
+
+
+Route::get('/show',[crudcontroller::class,'index'])->name('user.index');
+Route::post('/insertcontroller',[crudcontroller::class,'store'])->name('user.store');
+Route::get('/editcontroller/{id}',[crudcontroller::class,'edit'])->name('user.update');
+
+Route::patch('/updatecontroller/{id}',[crudcontroller::class,'update'])->name('user.edit');
+
+Route::get('/destroycontroller/{id}',[crudcontroller::class,'destroy'])->name('user.delete');
+
+Route::get('/insert',function (){
+    return view('create');
+});
+
+
+
+///route for relationship model
+
+Route::get('data',[membercontroller::class,'showdata']);
+
+
+
