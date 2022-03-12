@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\democontroll;
 use App\Http\Controllers\crudcontroller;
 use App\Http\Controllers\membercontroller;
+use App\Http\Controllers\polymorph;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -51,5 +52,6 @@ Route::get('/insert',function (){
 
 Route::get('data',[membercontroller::class,'showdata']);
 
+//Route for Polymorph relationship
 
-
+Route::get('poly',[polymorph::class,'oneonepolym']);
