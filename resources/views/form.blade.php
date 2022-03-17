@@ -14,59 +14,54 @@
             <div class="col-md-6 offset-md-3">
                 <div class="signup-form">
                     <form action="reqcontroll" method="Post" class="mt-5 border p-4 bg-light shadow">
-
-                        @error('fname')
-                        <div class="alert alert-danger alert-dismissible fade show my-3" role="alert">
-                            {{$message}}
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                          </div>
-                        @enderror
-
-
-                        @error('Lname')
-                        <div class="alert alert-danger alert-dismissible fade show my-3" role="alert">
-                            {{$message}}
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                          </div>
-                        @enderror
-
-
-                        @error('password')
-                        <div class="alert alert-danger alert-dismissible fade show my-3" role="alert">
-                            {{$message}}
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                          </div>
-                        @enderror
-
-                        @error('confirmpassword')
-                        <div class="alert alert-danger alert-dismissible fade show my-3" role="alert">
-                            {{$message}}
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                          </div>
-                        @enderror
-
                         @csrf
                         <div class="row">
-                            <div class="mb-3 col-md-6">
+                            <div class="mb-3 col-md-12">
                                 <label>First Name<span class="text-danger">*</span></label>
-                                <input type="text" name="fname" class="form-control" placeholder="Enter First Name"  class="@error('fname') is-invalid @enderror">
+                                <input type="text" name="fname" class="form-control" placeholder="Enter First Name" value="{{old('fname')}}"  class="@error('fname') is-invalid @enderror">
+                                @error('fname')
+                                <div class="alert alert-danger alert-dismissible fade show my-3" role="alert">
+                                    {{$message}}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                  </div>
+                                @enderror
                             </div>
 
-                            <div class="mb-3 col-md-6">
+                            <div class="mb-3 col-md-12">
                                 <label>Last Name<span class="text-danger">*</span></label>
                                 <input type="text" name="Lname" class="form-control" placeholder="Enter Last Name">
+                                @error('Lname')
+                                <div class="alert alert-danger alert-dismissible fade show my-3" role="alert">
+                                    {{$message}}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                  </div>
+                                @enderror
                             </div>
 
                             <div class="mb-3 col-md-12">
                                 <label>Password<span class="text-danger">*</span></label>
                                 <input type="password" name="password" class="form-control" placeholder="Enter Password">
+                                @error('password')
+                                <div class="alert alert-danger alert-dismissible fade show my-3" role="alert">
+                                    {{$message}}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                  </div>
+                                @enderror
                             </div>
+
                             <div class="mb-3 col-md-12">
                                 <label>Confirm Password<span class="text-danger">*</span></label>
                                 <input type="password" name="confirmpassword" class="form-control" placeholder="Confirm Password">
+                                @error('confirmpassword')
+                                <div class="alert alert-danger alert-dismissible fade show my-3" role="alert">
+                                    {{$message}}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                  </div>
+                                @enderror
                             </div>
-                            <div class="col-md-12">
-                               <button class="btn btn-primary float-end">Signup Now</button>
+
+                            <div class="col-md-12 text-center">
+                               <button class="btn btn-primary">Signup Now</button>
                             </div>
                         </div>
                     </form>

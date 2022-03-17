@@ -14,7 +14,7 @@ class reqcontroll extends Controller
     $validate=$request->validate([
         'fname'=>'required',
         'Lname'=>'required',
-        'password'=>'required|password',
+        'password'=>'required',
         'confirmpassword'=>'required',
     ],[
         'fname.required'=>'Please Enter First Name!!!',

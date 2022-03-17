@@ -6,6 +6,8 @@ use App\Http\Controllers\crudcontroller;
 use App\Http\Controllers\membercontroller;
 use App\Http\Controllers\polymorph;
 use App\Http\Controllers\reqcontroll;
+use App\Http\Controllers\collectioncontroll;
+use App\Http\Controllers\mutatorcontroller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -69,3 +71,14 @@ Route::get('/signing',function (){
 
 
 Route::Post('/reqcontroll',[reqcontroll::class,'reqdata'])->name('reqdata');
+
+
+//route for collection controller
+Route::get('/collection',[collectioncontroll::class,'collection']);
+
+// route for accessor
+Route::get('/accessor',[mutatorcontroller::class,'accessor']);
+
+// route for mutator
+Route::get('/mutator',[mutatorcontroller::class,'mutator']);
+
