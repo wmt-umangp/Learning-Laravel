@@ -8,6 +8,7 @@ use App\Http\Controllers\polymorph;
 use App\Http\Controllers\reqcontroll;
 use App\Http\Controllers\collectioncontroll;
 use App\Http\Controllers\mutatorcontroller;
+use App\Models\User;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,9 +20,9 @@ use App\Http\Controllers\mutatorcontroller;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 // Route::get('/home',function(){
 //     return view('home');
@@ -82,3 +83,27 @@ Route::get('/accessor',[mutatorcontroller::class,'accessor']);
 // route for mutator
 Route::get('/mutator',[mutatorcontroller::class,'mutator']);
 
+Route::get('/response', function (User $user) {
+
+    //returns response with header
+// return response('Hello World',200)->header('Content-Type','text/html');
+//
+    //returns model user.
+    // return $user;
+
+    //return response with cookies
+    // return response('Hello World')->cookie('name','umang');
+    // Cookie::expire('name');
+
+    //redirect to another link
+    // return redirect()->away('https://www.google.com');
+    // return back()->withInput();
+
+    return response()
+        ->json([
+        'name'=>'Abigail',
+        'state'=>'CA',
+    ]);
+});
+
+Route::get('blade',[reqcontroll::class,'bladedemo']);

@@ -13,7 +13,7 @@
         <div class="row">
             <div class="col-md-6 offset-md-3">
                 <div class="signup-form">
-                    <form action="reqcontroll" method="Post" class="mt-5 border p-4 bg-light shadow">
+                    <form action="reqcontroll"  enctype="multipart/form-data" method="Post" class="mt-5 border p-4 bg-light shadow">
                         @csrf
                         <div class="row">
                             <div class="mb-3 col-md-12">
@@ -58,6 +58,17 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                   </div>
                                 @enderror
+                            </div>
+
+                            <div class="mb-3 col-md-12">
+                                <label>File Upload<span class="text-danger">*</span></label>
+                                <input type="file" name="files" class="form-control">
+                                {{-- @error('confirmpassword')
+                                <div class="alert alert-danger alert-dismissible fade show my-3" role="alert">
+                                    {{$message}}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                  </div>
+                                @enderror --}}
                             </div>
 
                             <div class="col-md-12 text-center">
